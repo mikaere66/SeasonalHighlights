@@ -1,0 +1,47 @@
+
+CREATE TABLE Features(
+    feId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    code INTEGER NOT NULL,
+    stat TEXT NOT NULL,
+    desc TEXT NOT NULL,
+    iUrl TEXT,
+    lati REAL NOT NULL,
+    long REAL NOT NULL,
+    moId INTEGER NOT NULL,
+    time TEXT
+);
+
+getFeature:
+SELECT *
+FROM Features
+WHERE feId = ?;
+
+getFavourites:
+SELECT *
+FROM Features
+WHERE time NOT NULL
+ORDER BY code, name;
+
+getFeatures:
+SELECT *
+FROM Features
+ORDER BY code, name;
+
+insertFeature:
+INSERT INTO Features(feId, name, code, stat, desc, iUrl, lati, long, moId, time)
+VALUES (?,?,?,?,?,?,?,?,?,?);
+
+/**
+ * https://github.com/cashapp/sqldelight/issues/1482
+ */
+selectChanges:
+SELECT changes();
+
+selectLastInsertedRowId:
+SELECT last_insert_rowid();
+
+toggleFavourite:
+UPDATE Features
+SET time = ?
+WHERE feId = ?;

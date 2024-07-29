@@ -1,0 +1,132 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "b02781d47af268ca49dd0785efef6013",
+    "entities": [
+      {
+        "tableName": "highlights",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`shId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `smId` INTEGER NOT NULL, `name` TEXT NOT NULL, `code` INTEGER NOT NULL, `stat` TEXT NOT NULL, `desc` TEXT NOT NULL, `pUrl` TEXT, `lati` REAL NOT NULL, `long` REAL NOT NULL, `time` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "shId",
+            "columnName": "shId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "smId",
+            "columnName": "smId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stat",
+            "columnName": "stat",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "desc",
+            "columnName": "desc",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pUrl",
+            "columnName": "pUrl",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "lati",
+            "columnName": "lati",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "long",
+            "columnName": "long",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time",
+            "columnName": "time",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "shId"
+          ]
+        }
+      },
+      {
+        "tableName": "months",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`smId` INTEGER NOT NULL, `shId` INTEGER NOT NULL, PRIMARY KEY(`smId`))",
+        "fields": [
+          {
+            "fieldPath": "smId",
+            "columnName": "smId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "shId",
+            "columnName": "shId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "smId"
+          ]
+        }
+      },
+      {
+        "tableName": "seasons",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`seId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `code` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "seId",
+            "columnName": "seId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "code",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "seId"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b02781d47af268ca49dd0785efef6013')"
+    ]
+  }
+}

@@ -1,0 +1,569 @@
+Type-safe project accessors is an incubating feature.
+
+> Task :tasks
+
+------------------------------------------------------------
+Tasks runnable from root project 'SeasonalHighlights'
+------------------------------------------------------------
+
+Android tasks
+-------------
+composeApp:androidDependencies - Displays the Android dependencies of the project.
+composeApp:signingReport - Displays the signing info for the base and test modules
+composeApp:sourceSets - Prints out all the source sets defined in this project.
+
+Build tasks
+-----------
+composeApp:allMetadataJar - Assembles a jar archive containing the metadata for all Kotlin source sets.
+composeApp:assemble - Assemble main outputs for all the variants.
+composeApp:assembleAndroidTest - Assembles all the Test applications.
+composeApp:build - Assembles and tests this project.
+composeApp:buildDependents - Assembles and tests this project and all projects that depend on it.
+composeApp:buildKotlinToolingMetadata - Build metadata json file containing information about the used Kotlin tooling
+composeApp:buildNeeded - Assembles and tests this project and all projects it depends on.
+composeApp:bundle - Assemble bundles for all the variants.
+composeApp:clean - Deletes the build directory.
+composeApp:cleanAllTests - Deletes all the test results.
+composeApp:compileAppleMainKotlinMetadata - Compiles a klibrary from the 'appleMain' compilation in target 'metadata'.
+composeApp:compileDebugAndroidTestSources
+composeApp:compileDebugSources
+composeApp:compileDebugUnitTestSources
+composeApp:compileIosMainKotlinMetadata - Compiles a klibrary from the 'iosMain' compilation in target 'metadata'.
+composeApp:compileKotlinIosArm64 - Compiles a klibrary from the 'main' compilation in target 'iosArm64'.
+composeApp:compileKotlinIosSimulatorArm64 - Compiles a klibrary from the 'main' compilation in target 'iosSimulatorArm64'.
+composeApp:compileKotlinIosX64 - Compiles a klibrary from the 'main' compilation in target 'iosX64'.
+composeApp:compileNativeMainKotlinMetadata - Compiles a klibrary from the 'nativeMain' compilation in target 'metadata'.
+composeApp:compileReleaseSources
+composeApp:compileReleaseUnitTestSources
+composeApp:compileTestKotlinIosArm64 - Compiles a klibrary from the 'test' compilation in target 'iosArm64'.
+composeApp:compileTestKotlinIosSimulatorArm64 - Compiles a klibrary from the 'test' compilation in target 'iosSimulatorArm64'.
+composeApp:compileTestKotlinIosX64 - Compiles a klibrary from the 'test' compilation in target 'iosX64'.
+composeApp:embedAndSignAppleFrameworkForXcode - Embed and sign  framework as requested by Xcode's environment variables
+composeApp:iosArm64Binaries - Assembles outputs for target 'iosArm64'.
+composeApp:iosArm64MainBinaries - Links all binaries for compilation 'main' of target 'iosArm64'.
+composeApp:iosArm64MainKlibrary - Assembles outputs for compilation 'main' of target 'iosArm64'
+composeApp:iosArm64MetadataElements - Assembles Kotlin metadata of target 'iosArm64'.
+composeApp:iosArm64SourcesJar - Assembles a jar archive containing the sources of target 'iosArm64'.
+composeApp:iosArm64TestBinaries - Links all binaries for compilation 'test' of target 'iosArm64'.
+composeApp:iosArm64TestKlibrary - Assembles outputs for compilation 'test' of target 'iosArm64'
+composeApp:iosSimulatorArm64Binaries - Assembles outputs for target 'iosSimulatorArm64'.
+composeApp:iosSimulatorArm64MainBinaries - Links all binaries for compilation 'main' of target 'iosSimulatorArm64'.
+composeApp:iosSimulatorArm64MainKlibrary - Assembles outputs for compilation 'main' of target 'iosSimulatorArm64'
+composeApp:iosSimulatorArm64MetadataElements - Assembles Kotlin metadata of target 'iosSimulatorArm64'.
+composeApp:iosSimulatorArm64SourcesJar - Assembles a jar archive containing the sources of target 'iosSimulatorArm64'.
+composeApp:iosSimulatorArm64TestBinaries - Links all binaries for compilation 'test' of target 'iosSimulatorArm64'.
+composeApp:iosSimulatorArm64TestKlibrary - Assembles outputs for compilation 'test' of target 'iosSimulatorArm64'
+composeApp:iosX64Binaries - Assembles outputs for target 'iosX64'.
+composeApp:iosX64MainBinaries - Links all binaries for compilation 'main' of target 'iosX64'.
+composeApp:iosX64MainKlibrary - Assembles outputs for compilation 'main' of target 'iosX64'
+composeApp:iosX64MetadataElements - Assembles Kotlin metadata of target 'iosX64'.
+composeApp:iosX64SourcesJar - Assembles a jar archive containing the sources of target 'iosX64'.
+composeApp:iosX64TestBinaries - Links all binaries for compilation 'test' of target 'iosX64'.
+composeApp:iosX64TestKlibrary - Assembles outputs for compilation 'test' of target 'iosX64'
+composeApp:linkDebugFrameworkIosArm64 - Links a framework 'debugFramework' for a target 'iosArm64'.
+composeApp:linkDebugFrameworkIosSimulatorArm64 - Links a framework 'debugFramework' for a target 'iosSimulatorArm64'.
+composeApp:linkDebugFrameworkIosX64 - Links a framework 'debugFramework' for a target 'iosX64'.
+composeApp:linkDebugTestIosArm64 - Links a test executable 'debugTest' for a target 'iosArm64'.
+composeApp:linkDebugTestIosSimulatorArm64 - Links a test executable 'debugTest' for a target 'iosSimulatorArm64'.
+composeApp:linkDebugTestIosX64 - Links a test executable 'debugTest' for a target 'iosX64'.
+composeApp:linkIosArm64 - Links all binaries for target 'iosArm64'.
+composeApp:linkIosSimulatorArm64 - Links all binaries for target 'iosSimulatorArm64'.
+composeApp:linkIosX64 - Links all binaries for target 'iosX64'.
+composeApp:linkReleaseFrameworkIosArm64 - Links a framework 'releaseFramework' for a target 'iosArm64'.
+composeApp:linkReleaseFrameworkIosSimulatorArm64 - Links a framework 'releaseFramework' for a target 'iosSimulatorArm64'.
+composeApp:linkReleaseFrameworkIosX64 - Links a framework 'releaseFramework' for a target 'iosX64'.
+composeApp:metadataAppleMainClasses - Assembles outputs for compilation 'appleMain' of target 'metadata'
+composeApp:metadataCommonMainClasses - Assembles outputs for compilation 'commonMain' of target 'metadata'
+composeApp:metadataIosMainClasses - Assembles outputs for compilation 'iosMain' of target 'metadata'
+composeApp:metadataMainClasses - Assembles outputs for compilation 'main' of target 'metadata'
+composeApp:metadataNativeMainClasses - Assembles outputs for compilation 'nativeMain' of target 'metadata'
+composeApp:metadataSourcesJar - Assembles a jar archive containing the sources of target 'metadata'.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'SeasonalHighlights'.
+composeApp:buildEnvironment - Displays all buildscript dependencies declared in project ':composeApp'.
+dependencies - Displays all dependencies declared in root project 'SeasonalHighlights'.
+composeApp:dependencies - Displays all dependencies declared in project ':composeApp'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'SeasonalHighlights'.
+composeApp:dependencyInsight - Displays the insight into a specific dependency in project ':composeApp'.
+help - Displays a help message.
+composeApp:help - Displays a help message.
+javaToolchains - Displays the detected java toolchains.
+composeApp:javaToolchains - Displays the detected java toolchains.
+kotlinDslAccessorsReport - Prints the Kotlin code for accessing the currently available project extensions and conventions.
+composeApp:kotlinDslAccessorsReport - Prints the Kotlin code for accessing the currently available project extensions and conventions.
+outgoingVariants - Displays the outgoing variants of root project 'SeasonalHighlights'.
+composeApp:outgoingVariants - Displays the outgoing variants of project ':composeApp'.
+projects - Displays the sub-projects of root project 'SeasonalHighlights'.
+composeApp:projects - Displays the sub-projects of project ':composeApp'.
+properties - Displays the properties of root project 'SeasonalHighlights'.
+composeApp:properties - Displays the properties of project ':composeApp'.
+resolvableConfigurations - Displays the configurations that can be resolved in root project 'SeasonalHighlights'.
+composeApp:resolvableConfigurations - Displays the configurations that can be resolved in project ':composeApp'.
+tasks - Displays the tasks runnable from root project 'SeasonalHighlights' (some of the displayed tasks may belong to subprojects).
+composeApp:tasks - Displays the tasks runnable from project ':composeApp'.
+
+Ide tasks
+---------
+composeApp:resolveIdeDependencies - Debugging/Diagnosing task that will resolve dependencies for the IDE
+
+Install tasks
+-------------
+composeApp:installDebug - Installs the Debug build.
+composeApp:installDebugAndroidTest - Installs the android (on device) tests for the Debug build.
+composeApp:uninstallAll - Uninstall all applications.
+composeApp:uninstallDebug - Uninstalls the Debug build.
+composeApp:uninstallDebugAndroidTest - Uninstalls the android (on device) tests for the Debug build.
+composeApp:uninstallRelease - Uninstalls the Release build.
+
+Interop tasks
+-------------
+cleanNativeDistributionCommonization - Deletes all previously commonized klib's from the Kotlin/Native distribution
+commonize - Aggregator task for all c-interop & Native distribution commonizer tasks
+composeApp:commonize - Aggregator task for all c-interop & Native distribution commonizer tasks
+composeApp:commonizeCInterop - Invokes the commonizer on c-interop bindings of the project
+commonizeNativeDistribution - Invokes the commonizer on platform libraries provided by the Kotlin/Native distribution
+runCommonizer - [Deprecated: Use 'commonize' instead]
+composeApp:runCommonizer - [Deprecated: Use 'commonize' instead]
+
+Sqldelight tasks
+----------------
+composeApp:generateCommonMainSeasonalDatabaseInterface - Generate commonMain Kotlin interface for SeasonalDatabase
+composeApp:generateSqlDelightInterface - Aggregation task which runs every interface generation task for every given source
+composeApp:verifyCommonMainSeasonalDatabaseMigration - Verify commonMain SeasonalDatabase migrations and CREATE statements match.
+composeApp:verifySqlDelightMigration - Aggregation task which runs every migration task for every given source
+
+Verification tasks
+------------------
+composeApp:allTests - Runs the tests for all targets and create aggregated report
+composeApp:check - Runs all checks.
+composeApp:checkJetifier - Checks whether Jetifier is needed for the current project
+composeApp:checkKotlinGradlePluginConfigurationErrors - Checks that Kotlin Gradle Plugin hasn't reported project configuration errors, failing otherwise. This task always runs before compileKotlin* or similar tasks.
+composeApp:connectedAndroidTest - Installs and runs instrumentation tests for all flavors on connected devices.
+composeApp:connectedCheck - Runs all device checks on currently connected devices.
+composeApp:connectedDebugAndroidTest - Installs and runs the tests for debug on connected devices.
+composeApp:deviceAndroidTest - Installs and runs instrumentation tests using all Device Providers.
+composeApp:deviceCheck - Runs all device checks using Device Providers and Test Servers.
+composeApp:iosSimulatorArm64Test - Executes Kotlin/Native unit tests for target iosSimulatorArm64.
+composeApp:iosX64Test - Executes Kotlin/Native unit tests for target iosX64.
+composeApp:lint - Runs lint on the default variant.
+composeApp:lintDebug - Print text output from the corresponding lint report task
+composeApp:lintFix - Runs lint on the default variant and applies any safe suggestions to the source code.
+composeApp:lintRelease - Print text output from the corresponding lint report task
+composeApp:lintVitalRelease - Print text output from the corresponding lint report task
+composeApp:test - Run unit tests for all variants.
+composeApp:testDebugUnitTest - Run unit tests for the debug build.
+composeApp:testReleaseUnitTest - Run unit tests for the release build.
+composeApp:updateLintBaseline - Updates the lint baseline using the default variant.
+
+Other tasks
+-----------
+composeApp:analyzeDebugAndroidTestDependencies
+composeApp:analyzeDebugDependencies
+composeApp:analyzeDebugUnitTestDependencies
+composeApp:analyzeReleaseDependencies
+composeApp:analyzeReleaseUnitTestDependencies
+composeApp:androidDebugAndroidTestResourcesCopyHierarchicalMultiplatformResources
+composeApp:androidDebugAssetsCopyHierarchicalMultiplatformResources
+composeApp:androidDebugResourcesCopyHierarchicalMultiplatformResources
+composeApp:androidDebugUnitTestResourcesCopyHierarchicalMultiplatformResources
+composeApp:androidReleaseAssetsCopyHierarchicalMultiplatformResources
+composeApp:androidReleaseResourcesCopyHierarchicalMultiplatformResources
+composeApp:androidReleaseUnitTestResourcesCopyHierarchicalMultiplatformResources
+composeApp:appIdListTask
+composeApp:asarToCompatSplitsForDebug
+composeApp:asarToCompatSplitsForRelease
+composeApp:assembleDebug - Assembles main output for variant debug
+composeApp:assembleDebugAndroidTest - Assembles main output for variant debugAndroidTest
+composeApp:assembleDebugUnitTest - Assembles main output for variant debugUnitTest
+composeApp:assembleRelease - Assembles main output for variant release
+composeApp:assembleReleaseUnitTest - Assembles main output for variant releaseUnitTest
+composeApp:buildDebugPreBundle
+composeApp:buildReleasePreBundle
+composeApp:bundleDebug - Assembles bundle for variant debug
+composeApp:bundleDebugClassesToCompileJar
+composeApp:bundleDebugClassesToRuntimeJar
+composeApp:bundleDebugResources
+composeApp:bundleRelease - Assembles bundle for variant release
+composeApp:bundleReleaseClassesToCompileJar
+composeApp:bundleReleaseClassesToRuntimeJar
+composeApp:bundleReleaseResources
+composeApp:checkCanSyncComposeResourcesForIos
+composeApp:checkDebugAarMetadata
+composeApp:checkDebugAndroidTestAarMetadata
+composeApp:checkDebugAndroidTestDuplicateClasses
+composeApp:checkDebugDuplicateClasses
+composeApp:checkDebugManifest
+composeApp:checkReleaseAarMetadata
+composeApp:checkReleaseDuplicateClasses
+composeApp:checkReleaseManifest
+composeApp:collectReleaseDependencies
+composeApp:compileCommonMainKotlinMetadata - Compiles the kotlin sources in compilation 'commonMain' in target 'metadata' to Metadata.
+composeApp:compileDebugAndroidTestJavaWithJavac
+composeApp:compileDebugAndroidTestKotlinAndroid - Compiles the debugAndroidTest kotlin.
+composeApp:compileDebugAndroidTestShaders
+composeApp:compileDebugArtProfile
+composeApp:compileDebugJavaWithJavac
+composeApp:compileDebugKotlinAndroid - Compiles the debug kotlin.
+composeApp:compileDebugShaders
+composeApp:compileDebugUnitTestJavaWithJavac
+composeApp:compileDebugUnitTestKotlinAndroid - Compiles the debugUnitTest kotlin.
+composeApp:compileKotlinMetadata - Compiles the kotlin sources in compilation 'main' in target 'metadata' to Metadata.
+composeApp:compileLint
+composeApp:compileLintChecks
+composeApp:compileReleaseArtProfile
+composeApp:compileReleaseJavaWithJavac
+composeApp:compileReleaseKotlinAndroid - Compiles the release kotlin.
+composeApp:compileReleaseShaders
+composeApp:compileReleaseUnitTestJavaWithJavac
+composeApp:compileReleaseUnitTestKotlinAndroid - Compiles the releaseUnitTest kotlin.
+components - Displays the components produced by root project 'SeasonalHighlights'. [deprecated]
+composeApp:components - Displays the components produced by project ':composeApp'. [deprecated]
+composeApp:compressDebugAndroidTestAssets
+composeApp:compressDebugAssets
+composeApp:compressReleaseAssets
+composeApp:configureReleaseDependencies
+composeApp:consumeConfigAttr
+composeApp:convertXmlValueResourcesForAndroidDebug
+composeApp:convertXmlValueResourcesForAndroidInstrumentedTest
+composeApp:convertXmlValueResourcesForAndroidInstrumentedTestDebug
+composeApp:convertXmlValueResourcesForAndroidMain
+composeApp:convertXmlValueResourcesForAndroidRelease
+composeApp:convertXmlValueResourcesForAndroidUnitTest
+composeApp:convertXmlValueResourcesForAndroidUnitTestDebug
+composeApp:convertXmlValueResourcesForAndroidUnitTestRelease
+composeApp:convertXmlValueResourcesForAppleMain
+composeApp:convertXmlValueResourcesForAppleTest
+composeApp:convertXmlValueResourcesForCommonMain
+composeApp:convertXmlValueResourcesForCommonTest
+composeApp:convertXmlValueResourcesForIosArm64Main
+composeApp:convertXmlValueResourcesForIosArm64Test
+composeApp:convertXmlValueResourcesForIosMain
+composeApp:convertXmlValueResourcesForIosSimulatorArm64Main
+composeApp:convertXmlValueResourcesForIosSimulatorArm64Test
+composeApp:convertXmlValueResourcesForIosTest
+composeApp:convertXmlValueResourcesForIosX64Main
+composeApp:convertXmlValueResourcesForIosX64Test
+composeApp:convertXmlValueResourcesForNativeMain
+composeApp:convertXmlValueResourcesForNativeTest
+composeApp:copyNonXmlValueResourcesForAndroidDebug
+composeApp:copyNonXmlValueResourcesForAndroidInstrumentedTest
+composeApp:copyNonXmlValueResourcesForAndroidInstrumentedTestDebug
+composeApp:copyNonXmlValueResourcesForAndroidMain
+composeApp:copyNonXmlValueResourcesForAndroidRelease
+composeApp:copyNonXmlValueResourcesForAndroidUnitTest
+composeApp:copyNonXmlValueResourcesForAndroidUnitTestDebug
+composeApp:copyNonXmlValueResourcesForAndroidUnitTestRelease
+composeApp:copyNonXmlValueResourcesForAppleMain
+composeApp:copyNonXmlValueResourcesForAppleTest
+composeApp:copyNonXmlValueResourcesForCommonMain
+composeApp:copyNonXmlValueResourcesForCommonTest
+composeApp:copyNonXmlValueResourcesForIosArm64Main
+composeApp:copyNonXmlValueResourcesForIosArm64Test
+composeApp:copyNonXmlValueResourcesForIosMain
+composeApp:copyNonXmlValueResourcesForIosSimulatorArm64Main
+composeApp:copyNonXmlValueResourcesForIosSimulatorArm64Test
+composeApp:copyNonXmlValueResourcesForIosTest
+composeApp:copyNonXmlValueResourcesForIosX64Main
+composeApp:copyNonXmlValueResourcesForIosX64Test
+composeApp:copyNonXmlValueResourcesForNativeMain
+composeApp:copyNonXmlValueResourcesForNativeTest
+composeApp:copyTestComposeResourcesForIosArm64
+composeApp:copyTestComposeResourcesForIosSimulatorArm64
+composeApp:copyTestComposeResourcesForIosX64
+composeApp:createDebugAndroidTestApkListingFileRedirect
+composeApp:createDebugApkListingFileRedirect
+composeApp:createDebugApksFromBundleListingFileRedirect
+composeApp:createDebugBundleListingFileRedirect
+composeApp:createDebugCompatibleScreenManifests
+composeApp:createDebugVariantModel
+composeApp:createMockableJar
+composeApp:createReleaseApkListingFileRedirect
+composeApp:createReleaseApksFromBundleListingFileRedirect
+composeApp:createReleaseBundleListingFileRedirect
+composeApp:createReleaseCompatibleScreenManifests
+composeApp:createReleaseVariantModel
+composeApp:debugAssetsCopyForAGP
+dependentComponents - Displays the dependent components of components in root project 'SeasonalHighlights'. [deprecated]
+composeApp:dependentComponents - Displays the dependent components of components in project ':composeApp'. [deprecated]
+composeApp:desugarDebugAndroidTestFileDependencies
+composeApp:desugarDebugFileDependencies
+composeApp:desugarReleaseFileDependencies
+composeApp:dexBuilderDebug
+composeApp:dexBuilderDebugAndroidTest
+composeApp:dexBuilderRelease
+composeApp:extractApksForDebug
+composeApp:extractApksForRelease
+composeApp:extractApksFromBundleForDebug
+composeApp:extractApksFromBundleForRelease
+composeApp:extractApksFromSdkSplitsForDebug
+composeApp:extractApksFromSdkSplitsForRelease
+composeApp:extractDebugNativeDebugMetadata
+composeApp:extractDebugNativeSymbolTables
+composeApp:extractDeepLinksDebug
+composeApp:extractDeepLinksRelease
+composeApp:extractProguardFiles
+composeApp:extractReleaseNativeDebugMetadata
+composeApp:extractReleaseNativeSymbolTables
+composeApp:generateComposeResClass
+composeApp:generateDebugAndroidTestAssets
+composeApp:generateDebugAndroidTestResources
+composeApp:generateDebugAndroidTestResValues
+composeApp:generateDebugAndroidTestSources
+composeApp:generateDebugAssets
+composeApp:generateDebugFeatureMetadata
+composeApp:generateDebugFeatureTransitiveDeps
+composeApp:generateDebugLintModel
+composeApp:generateDebugLintReportModel
+composeApp:generateDebugManifestClass
+composeApp:generateDebugResources
+composeApp:generateDebugResValues
+composeApp:generateDebugSources
+composeApp:generateDebugUnitTestAssets
+composeApp:generateDebugUnitTestResources
+composeApp:generateDebugUnitTestSources
+composeApp:generateProjectStructureMetadata - Generates serialized project structure metadata of the current project (for tooling)
+composeApp:generateReleaseAssets
+composeApp:generateReleaseFeatureMetadata
+composeApp:generateReleaseFeatureTransitiveDeps
+composeApp:generateReleaseLintModel
+composeApp:generateReleaseLintReportModel
+composeApp:generateReleaseLintVitalReportModel
+composeApp:generateReleaseManifestClass
+composeApp:generateReleaseResources
+composeApp:generateReleaseResValues
+composeApp:generateReleaseSources
+composeApp:generateReleaseUnitTestAssets
+composeApp:generateReleaseUnitTestResources
+composeApp:generateReleaseUnitTestSources
+composeApp:generateResourceAccessorsForAndroidDebug
+composeApp:generateResourceAccessorsForAndroidInstrumentedTest
+composeApp:generateResourceAccessorsForAndroidInstrumentedTestDebug
+composeApp:generateResourceAccessorsForAndroidMain
+composeApp:generateResourceAccessorsForAndroidRelease
+composeApp:generateResourceAccessorsForAndroidUnitTest
+composeApp:generateResourceAccessorsForAndroidUnitTestDebug
+composeApp:generateResourceAccessorsForAndroidUnitTestRelease
+composeApp:generateResourceAccessorsForAppleMain
+composeApp:generateResourceAccessorsForAppleTest
+composeApp:generateResourceAccessorsForCommonMain
+composeApp:generateResourceAccessorsForCommonTest
+composeApp:generateResourceAccessorsForIosArm64Main
+composeApp:generateResourceAccessorsForIosArm64Test
+composeApp:generateResourceAccessorsForIosMain
+composeApp:generateResourceAccessorsForIosSimulatorArm64Main
+composeApp:generateResourceAccessorsForIosSimulatorArm64Test
+composeApp:generateResourceAccessorsForIosTest
+composeApp:generateResourceAccessorsForIosX64Main
+composeApp:generateResourceAccessorsForIosX64Test
+composeApp:generateResourceAccessorsForNativeMain
+composeApp:generateResourceAccessorsForNativeTest
+composeApp:iosArm64AggregateResources
+composeApp:iosArm64CopyHierarchicalMultiplatformResources
+composeApp:iosArm64ProcessResources - Processes file collection.
+composeApp:iosArm64ResolveResourcesFromDependencies
+composeApp:iosArm64ResolveSelfResourcesCopyHierarchicalMultiplatformResources
+composeApp:iosArm64TestProcessResources - Processes file collection.
+composeApp:iosArm64ZipMultiplatformResourcesForPublication
+composeApp:iosSimulatorArm64AggregateResources
+composeApp:iosSimulatorArm64CopyHierarchicalMultiplatformResources
+composeApp:iosSimulatorArm64ProcessResources - Processes file collection.
+composeApp:iosSimulatorArm64ResolveResourcesFromDependencies
+composeApp:iosSimulatorArm64ResolveSelfResourcesCopyHierarchicalMultiplatformResources
+composeApp:iosSimulatorArm64TestProcessResources - Processes file collection.
+composeApp:iosSimulatorArm64ZipMultiplatformResourcesForPublication
+composeApp:iosX64AggregateResources
+composeApp:iosX64CopyHierarchicalMultiplatformResources
+composeApp:iosX64ProcessResources - Processes file collection.
+composeApp:iosX64ResolveResourcesFromDependencies
+composeApp:iosX64ResolveSelfResourcesCopyHierarchicalMultiplatformResources
+composeApp:iosX64TestProcessResources - Processes file collection.
+composeApp:iosX64ZipMultiplatformResourcesForPublication
+composeApp:javaPreCompileDebug
+composeApp:javaPreCompileDebugAndroidTest
+composeApp:javaPreCompileDebugUnitTest
+composeApp:javaPreCompileRelease
+composeApp:javaPreCompileReleaseUnitTest
+composeApp:linkDebugFrameworkIosFat
+composeApp:linkReleaseFrameworkIosFat
+composeApp:lintAnalyzeDebug - Run lint analysis on the debug variant
+composeApp:lintAnalyzeRelease - Run lint analysis on the release variant
+composeApp:lintFixDebug - Fix lint on the debug variant
+composeApp:lintFixRelease - Fix lint on the release variant
+composeApp:lintReportDebug - Run lint on the debug variant
+composeApp:lintReportRelease - Run lint on the release variant
+composeApp:lintVitalAnalyzeRelease - Run lint analysis with only the fatal issues enabled on the release variant
+composeApp:lintVitalReportRelease - Run lint with only the fatal issues enabled on the release variant
+composeApp:makeApkFromBundleForDebug
+composeApp:makeApkFromBundleForRelease
+composeApp:mapDebugAndroidTestSourceSetPaths
+composeApp:mapDebugSourceSetPaths
+composeApp:mapReleaseSourceSetPaths
+composeApp:mergeDebugAndroidTestAssets
+composeApp:mergeDebugAndroidTestGeneratedProguardFiles
+composeApp:mergeDebugAndroidTestJavaResource
+composeApp:mergeDebugAndroidTestJniLibFolders
+composeApp:mergeDebugAndroidTestNativeLibs
+composeApp:mergeDebugAndroidTestResources
+composeApp:mergeDebugAndroidTestShaders
+composeApp:mergeDebugArtProfile
+composeApp:mergeDebugAssets
+composeApp:mergeDebugGeneratedProguardFiles
+composeApp:mergeDebugJavaResource
+composeApp:mergeDebugJniLibFolders
+composeApp:mergeDebugNativeDebugMetadata
+composeApp:mergeDebugNativeLibs
+composeApp:mergeDebugResources
+composeApp:mergeDebugShaders
+composeApp:mergeDexRelease
+composeApp:mergeExtDexDebug
+composeApp:mergeExtDexDebugAndroidTest
+composeApp:mergeExtDexRelease
+composeApp:mergeLibDexDebug
+composeApp:mergeLibDexDebugAndroidTest
+composeApp:mergeProjectDexDebug
+composeApp:mergeProjectDexDebugAndroidTest
+composeApp:mergeReleaseArtProfile
+composeApp:mergeReleaseAssets
+composeApp:mergeReleaseGeneratedProguardFiles
+composeApp:mergeReleaseGlobalSynthetics
+composeApp:mergeReleaseJavaResource
+composeApp:mergeReleaseJniLibFolders
+composeApp:mergeReleaseNativeDebugMetadata
+composeApp:mergeReleaseNativeLibs
+composeApp:mergeReleaseResources
+composeApp:mergeReleaseShaders
+composeApp:metadataAppleMainProcessResources - Processes file collection.
+composeApp:metadataCommonMainProcessResources - Processes file collection.
+composeApp:metadataIosMainProcessResources - Processes file collection.
+composeApp:metadataNativeMainProcessResources - Processes file collection.
+composeApp:metadataProcessResources - Processes file collection.
+model - Displays the configuration model of root project 'SeasonalHighlights'. [deprecated]
+composeApp:model - Displays the configuration model of project ':composeApp'. [deprecated]
+composeApp:optimizeReleaseResources
+composeApp:packageDebug
+composeApp:packageDebugAndroidTest
+composeApp:packageDebugBundle
+composeApp:packageDebugResources
+composeApp:packageDebugUniversalApk
+composeApp:packageRelease
+composeApp:packageReleaseBundle
+composeApp:packageReleaseResources
+composeApp:packageReleaseUniversalApk
+composeApp:parseDebugIntegrityConfig
+composeApp:parseDebugLocalResources
+composeApp:parseReleaseIntegrityConfig
+composeApp:parseReleaseLocalResources
+composeApp:preBuild
+composeApp:preDebugAndroidTestBuild
+composeApp:preDebugBuild
+composeApp:preDebugUnitTestBuild
+composeApp:prepareComposeResourcesTaskForAndroidDebug
+composeApp:prepareComposeResourcesTaskForAndroidInstrumentedTest
+composeApp:prepareComposeResourcesTaskForAndroidInstrumentedTestDebug
+composeApp:prepareComposeResourcesTaskForAndroidMain
+composeApp:prepareComposeResourcesTaskForAndroidRelease
+composeApp:prepareComposeResourcesTaskForAndroidUnitTest
+composeApp:prepareComposeResourcesTaskForAndroidUnitTestDebug
+composeApp:prepareComposeResourcesTaskForAndroidUnitTestRelease
+composeApp:prepareComposeResourcesTaskForAppleMain
+composeApp:prepareComposeResourcesTaskForAppleTest
+composeApp:prepareComposeResourcesTaskForCommonMain
+composeApp:prepareComposeResourcesTaskForCommonTest
+composeApp:prepareComposeResourcesTaskForIosArm64Main
+composeApp:prepareComposeResourcesTaskForIosArm64Test
+composeApp:prepareComposeResourcesTaskForIosMain
+composeApp:prepareComposeResourcesTaskForIosSimulatorArm64Main
+composeApp:prepareComposeResourcesTaskForIosSimulatorArm64Test
+composeApp:prepareComposeResourcesTaskForIosTest
+composeApp:prepareComposeResourcesTaskForIosX64Main
+composeApp:prepareComposeResourcesTaskForIosX64Test
+composeApp:prepareComposeResourcesTaskForNativeMain
+composeApp:prepareComposeResourcesTaskForNativeTest
+prepareKotlinBuildScriptModel
+prepareKotlinIdeaImport - Umbrella for all tasks required to run before IDEA/Gradle import
+composeApp:prepareKotlinIdeaImport - Umbrella for all tasks required to run before IDEA/Gradle import
+composeApp:prepareLintJarForPublish
+composeApp:preReleaseBuild
+composeApp:preReleaseUnitTestBuild
+composeApp:processApplicationManifestDebugForBundle
+composeApp:processApplicationManifestReleaseForBundle
+composeApp:processDebugAndroidTestJavaRes
+composeApp:processDebugAndroidTestManifest
+composeApp:processDebugAndroidTestResources
+composeApp:processDebugJavaRes
+composeApp:processDebugMainManifest
+composeApp:processDebugManifest
+composeApp:processDebugManifestForInstantApp
+composeApp:processDebugManifestForPackage
+composeApp:processDebugResources
+composeApp:processDebugUnitTestJavaRes
+composeApp:processManifestDebugForFeature
+composeApp:processManifestReleaseForFeature
+composeApp:processReleaseJavaRes
+composeApp:processReleaseMainManifest
+composeApp:processReleaseManifest
+composeApp:processReleaseManifestForInstantApp
+composeApp:processReleaseManifestForPackage
+composeApp:processReleaseResources
+composeApp:processReleaseUnitTestJavaRes
+composeApp:produceDebugBundleIdeListingFile
+composeApp:produceReleaseBundleIdeListingFile
+composeApp:releaseAssetsCopyForAGP
+composeApp:resolveConfigAttr
+composeApp:sdkReleaseDependencyData
+composeApp:setupLldbScript - Generate lldbinit file with imported konan_lldb.py script
+composeApp:signDebugBundle
+composeApp:signingConfigWriterDebug
+composeApp:signingConfigWriterDebugAndroidTest
+composeApp:signingConfigWriterRelease
+composeApp:signReleaseBundle
+composeApp:stripDebugAndroidTestDebugSymbols
+composeApp:stripDebugDebugSymbols
+composeApp:stripReleaseDebugSymbols
+composeApp:syncComposeResourcesForIos
+composeApp:transformAppleMainCInteropDependenciesMetadata
+composeApp:transformAppleMainCInteropDependenciesMetadataForIde
+composeApp:transformAppleMainDependenciesMetadata - Generates serialized dependencies metadata for compilation 'appleMain' (for tooling)
+composeApp:transformAppleTestCInteropDependenciesMetadataForIde
+composeApp:transformCommonMainDependenciesMetadata - Generates serialized dependencies metadata for compilation 'commonMain' (for tooling)
+composeApp:transformDependenciesMetadata
+composeApp:transformIosMainCInteropDependenciesMetadata
+composeApp:transformIosMainCInteropDependenciesMetadataForIde
+composeApp:transformIosMainDependenciesMetadata - Generates serialized dependencies metadata for compilation 'iosMain' (for tooling)
+composeApp:transformIosTestCInteropDependenciesMetadataForIde
+composeApp:transformNativeMainCInteropDependenciesMetadata
+composeApp:transformNativeMainCInteropDependenciesMetadataForIde
+composeApp:transformNativeMainDependenciesMetadata - Generates serialized dependencies metadata for compilation 'nativeMain' (for tooling)
+composeApp:transformNativeTestCInteropDependenciesMetadataForIde
+composeApp:updateLintBaselineDebug - Update the lint baseline using the debug variant
+composeApp:updateLintBaselineRelease - Update the lint baseline using the release variant
+composeApp:validateSigningDebug
+composeApp:validateSigningDebugAndroidTest
+composeApp:writeDebugAndroidTestSigningConfigVersions
+composeApp:writeDebugApplicationId
+composeApp:writeDebugAppMetadata
+composeApp:writeDebugModuleMetadata
+composeApp:writeDebugSigningConfigVersions
+composeApp:writeReleaseApplicationId
+composeApp:writeReleaseAppMetadata
+composeApp:writeReleaseModuleMetadata
+composeApp:writeReleaseSigningConfigVersions
+composeApp:xcodeVersion
+composeApp:zipApksForDebug
+composeApp:zipApksForRelease
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.7/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 608ms
+1 actionable task: 1 executed

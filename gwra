@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# ./gradlew clean
+
+# Refer to tasks in /GradleTasksAll.txt
+./gradlew composeApp:generateResourceAccessorsForCommonMain

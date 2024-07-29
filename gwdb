@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# ./gradlew clean
+
+# https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-ktor-sqldelight.html#configure-sqldelight-and-implement-cache-logic
+./gradlew generateSqlDelightInterface # generateCommonMainSeasonalDatabaseInterface

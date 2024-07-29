@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE resources [
+    <!ENTITY appSubtitle "Christchurch Botanic Gardens:">
+]><resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- AppBar Title -->
+    <string name="app_name">Botanic Gardens</string>
+    <string name="app_alias">Seasonal Highlights</string>
+
+    <!-- App Subtitles -->
+    <plurals name="app_subtitle">
+          <item quantity="one">&appSubtitle;\nShowing %1$s (%2$d)</item>
+        <item quantity="other">&appSubtitle;\nFiltered for %1$s (%2$d)</item>
+    </plurals> -->
+    <string name="app_items">all items</string>
+    <string name="app_faves">Your Favourites</string>
+    <string name="app_settings">App Settings</string>
+
+    <!-- Content Descriptions -->
+    <!-- Filter by Season uses its header as contentDesc -->
+    <string name="desc_fave_add">Add as Favourite</string>
+    <string name="desc_fave_remove">Remove Favourite</string>
+    <string name="desc_menu_overflow">Overflow Menu</string>
+
+    <!-- Main Menu -->
+    <string name="menu_filter_title">Filter by Season</string>
+    <string name="menu_all_seasons">All Seasons</string>
+
+    <!-- NavBar Labels -->
+    <string name="tab_main">Home</string>
+    <string name="tab_fave">Faves</string>
+    <!-- Sett: the den or burrow of a badger -->
+    <string name="tab_sett">Settings</string>
+
+    <!-- Settings -->
+    <string name="setting_save_restore_season">Save then restore\nseason at startup</string>
+    <string name="setting_navigate_back">Back to Main screen</string>
+
+    <!-- Placeholders -->
+    <string name="feature_desc">Description: %1$s</string>
+    <string name="feature_stat">Open: %1$s</string>
+
+</resources>

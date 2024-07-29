@@ -1,0 +1,25 @@
+
+/**
+ * 
+ */
+CREATE TABLE Seasons(
+    seId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    code TEXT NOT NULL
+);
+
+getSeason:
+SELECT * FROM Seasons
+WHERE code = ?;
+
+getSeasons:
+SELECT * FROM Seasons;
+
+insertSeason:
+INSERT INTO Seasons(seId, code)
+VALUES (?,?);
+
+/**
+ * https://github.com/cashapp/sqldelight/issues/1482
+ */
+selectLastInsertedRowId:
+SELECT last_insert_rowid();
