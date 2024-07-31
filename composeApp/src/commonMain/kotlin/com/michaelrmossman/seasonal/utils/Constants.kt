@@ -23,9 +23,6 @@ object Constants {
         "7_late_spring.json"
     )
 
-    const val DATABASE_FILENAME = "highlights.db"
-    const val DATABASE_VERSION  = 1
-
     /* Must be in the same order as
        Constants.assetFilenames */
     val seasonColors = listOf(
@@ -37,10 +34,4 @@ object Constants {
         spring,
         lateSpring
     )
-
-    const val TABLE_COLUMN_SEASON   = "code"
-
-    const val TABLE_NAME_HIGHLIGHTS = "highlights"
-    const val TABLE_NAME_MONTHS     = "months"
-    const val TABLE_NAME_SEASONS    = "seasons"
 }

@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.michaelrmossman.seasonal.cache.DatabaseImpl
 import com.michaelrmossman.seasonal.enums.Setting
 import com.michaelrmossman.seasonal.utils.SeasonFilter
+import io.github.aakira.napier.Napier
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
@@ -18,30 +19,42 @@ class MainViewModel(
 
     private var _currentSeason = MutableStateFlow(0)
 
-    private val seasonFilter = SeasonFilter()
+    private val _seasonFilter = SeasonFilter()
+
+    private val _state = MutableStateFlow(MainScreenState())
+    val state = combine(
+        database.getFavourites(),
+        database.getHighlights(),
+        _currentSeason,
+        _state
+    ) { faves, highlights, season, state ->
+        val filtered = _seasonFilter.filterBySeason(
+            highlights, season
+        )
+        state.copy(
+            currentSeason = season,
+            favourites = faves,
+            highlights = filtered
+        )
+    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(
+        5000L
+    ) , MainScreenState())
+
+    init {
+        /* Highlights must come before Seasons */
+        loadHighlights()
+        loadSeasons()
+        loadSettings()
+    }
 
     private fun loadHighlights() {
         viewModelScope.launch {
-            _state.update { state ->
-                state.copy(
-                    highlights = emptyList()
-                )
-            }
-
-            try {
-                val highlights = database.getHighlights()
-                _state.update { state ->
-                    state.copy(
-                        highlights = highlights
-                    )
-                }
-
-            } catch (e: Exception) {
-                _state.update { state ->
-                    state.copy(
-                        highlights = emptyList()
-                    )
-                }
+            /* Like everything weird that SqlDelight
+               does, it returns COUNT(*) as Long */
+            if (database.getFeatureCount() < 1L) {
+                /* If the DB has NOT yet been populated,
+                   get busy importing the asset files */
+                database.populateDb()
             }
         }
     }
@@ -69,7 +82,7 @@ class MainViewModel(
     private fun loadSettings() {
         viewModelScope.launch {
             try {
-                /* RestoreSeason must come before CurrentSeason */
+                /* Restore must come before Current */
                 val saveAndRestore = database.getSetting(
                     Setting.RestoreSeason.name
                 ).value_.toBoolean()
@@ -93,33 +106,31 @@ class MainViewModel(
         }
     }
 
-    private val _state = MutableStateFlow(MainScreenState())
-    val state = combine(
-        database.getFavourites(),
-        _currentSeason,
-        _state
-    ) { faves, season, state ->
-        val filtered = seasonFilter.filterBySeason(
-            state.highlights, season
-        )
-        state.copy(
-            currentSeason = season,
-            favourites = faves,
-            highlights = filtered
-        )
-    }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(
-        5000L
-    ) , MainScreenState())
-
-    init {
-        /* Highlights must come before Seasons */
-        loadHighlights()
-        loadSeasons()
-        loadSettings()
-    }
-
     fun onEvent(event: MainListEvent) {
         when (event) {
+            is MainListEvent.DeleteAllFavourites -> {
+                val faves = state.value.favourites
+                val iterator = faves.iterator()
+                val faveCount = faves.size
+                var delCount = 0
+                viewModelScope.launch {
+                    while (iterator.hasNext()) {
+                        val result = database.deleteFavourite(
+                            iterator.next().shId
+                        )
+                        if (result > 0) {
+                            delCount = delCount.plus(1)
+                        }
+                    }
+                    if (delCount == faveCount) {
+                        _state.update { state ->
+                            state.copy(
+                                favourites = emptyList()
+                            )
+                        }
+                    }
+                }
+            }
             is MainListEvent.SetCurrentSeason -> {
                 when (_state.value.saveAndRestoreSeason) {
                     true -> {
@@ -139,7 +150,9 @@ class MainViewModel(
             is MainListEvent.SetCurrentScreen -> {
                 _state.update { state ->
                     state.copy(
-                        currentScreen = event.screen
+                        currentScreen = MutableStateFlow(
+                            event.screen
+                        )
                     )
                 }
             }

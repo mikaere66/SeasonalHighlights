@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Feature(
+
     @SerialName("type")
     val type: String,
 

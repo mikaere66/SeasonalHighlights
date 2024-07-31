@@ -42,7 +42,7 @@ fun MainListStatus(
 ) {
     var checked by rememberSaveable {
         mutableStateOf(
-            highlight.time?.isNotBlank() == true
+            highlight.time?.isNotEmpty() == true
         )
     }
     val toggleFave = {
@@ -60,15 +60,15 @@ fun MainListStatus(
             .fillMaxWidth(),
         verticalAlignment = Alignment.Top
     ) {
-//        AdaptiveWidget(
-//            cupertino = {
-//                CupertinoText(
-//                    style = CupertinoTheme
-//                        .typography.largeTitle,
-//                    text = highlight.name
-//                )
-//            },
-//            material = {
+        AdaptiveWidget(
+            cupertino = {
+                CupertinoText(
+                    style = CupertinoTheme
+                        .typography.largeTitle,
+                    text = highlight.name
+                )
+            },
+            material = {
                 Text(
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
@@ -79,8 +79,8 @@ fun MainListStatus(
                         formatArgs = arrayOf(highlight.stat)
                     )
                 )
-//            }
-//        )
+            }
+        )
 
         Column(
             modifier = Modifier.fillMaxHeight()

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE resources [
-    <!ENTITY appSubtitle "Christchurch Botanic Gardens:">
+    <!ENTITY appSettings "App Settings">
+    <!ENTITY appSubtitle "Christchurch Botanic Gardens">
 ]><resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- AppBar Title -->
@@ -13,30 +14,47 @@
         <item quantity="other">&appSubtitle;\nFiltered for %1$s (%2$d)</item>
     </plurals> -->
     <string name="app_items">all items</string>
-    <string name="app_faves">Your Favourites</string>
-    <string name="app_settings">App Settings</string>
+       <string name="app_faves">&appSubtitle;\nYour Favourites (%1$d)</string>
+    <string name="app_settings">&appSubtitle;\n&appSettings;</string>
+
+    <!-- BottomBar Labels -->
+    <string name="tab_main">Home</string>
+    <string name="tab_fave">Faves</string>
+    <string name="tab_sett">Settings</string>
 
     <!-- Content Descriptions -->
-    <!-- Filter by Season uses its header as contentDesc -->
     <string name="desc_fave_add">Add as Favourite</string>
     <string name="desc_fave_remove">Remove Favourite</string>
+    <string name="desc_faves_remove">Remove all Faves</string>
     <string name="desc_menu_overflow">Overflow Menu</string>
+    <string name="desc_navigate_back">Back</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_okay">OK</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_confirm">YES</string>
+    <string name="dialog_deny">NO</string>
+
+    <!-- Favourites -->
+    <string name="fave_added">Fave added: %1$s %2$s</string>
+    <plurals name="faves_dialog_title">
+          <item quantity="one">Remove %1$d Favourite?</item>
+        <item quantity="other">Remove %1$d Favourites?</item>
+    </plurals>
+
+    <string name="faves_dialog_text">This action will remove
+        all your favourites &#8230; continue?</string>
 
     <!-- Main Menu -->
     <string name="menu_filter_title">Filter by Season</string>
     <string name="menu_all_seasons">All Seasons</string>
-
-    <!-- NavBar Labels -->
-    <string name="tab_main">Home</string>
-    <string name="tab_fave">Faves</string>
-    <!-- Sett: the den or burrow of a badger -->
-    <string name="tab_sett">Settings</string>
+    <string name="menu_app_settings">&appSettings;</string>
 
     <!-- Settings -->
-    <string name="setting_save_restore_season">Save then restore\nseason at startup</string>
-    <string name="setting_navigate_back">Back to Main screen</string>
+    <string name="setting_save_restore_season">Save
+        then restore season at startup</string>
 
-    <!-- Placeholders -->
+    <!-- Prefixes -->
     <string name="feature_desc">Description: %1$s</string>
     <string name="feature_stat">Open: %1$s</string>
 

@@ -21,7 +21,6 @@ import io.github.alexzhirkevich.cupertino.theme.CupertinoTheme
 fun MainListHeader(
     highlight: Highlight
 ) {
-
     Row(
         modifier = Modifier
             /* Find colour for this season by

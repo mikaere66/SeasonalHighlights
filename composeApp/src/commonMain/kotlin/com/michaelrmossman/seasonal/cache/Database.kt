@@ -47,12 +47,18 @@ internal class Database(
         )
     }
 
-    internal fun getFeatures(): List<Highlight> {
+    internal fun getFeatureCount(): Long {
+        return featureQueries.getFeatureCount().executeAsOne()
+    }
+
+    internal fun getFeatures(): Flow<List<Highlight>> {
         /* Here, we need to map SqlDelight-created
            object Features to our Highlight object */
         return featureQueries.getFeatures(
             ::mapFeaturesToHighlights
-        ).executeAsList()
+        ).asFlow().mapToList(
+            Dispatchers.IO
+        )
     }
 
     internal fun getSeasons(): List<Seasons> {
@@ -130,7 +136,7 @@ internal class Database(
                        files, they appear as longitude|latitude */
                     lati = feature.geometry.coordinates[1],
                     long = feature.geometry.coordinates[0],
-                    moId = 0,
+                    moId = 0L,
                     time = String()
                 )
             }

@@ -26,35 +26,15 @@ class DatabaseImpl(
     }
 
     @Throws(Exception::class)
-    suspend fun getHighlights(): List<Highlight> {
-        val existingFeatures = database.getFeatures()
+    fun getFeatureCount(): Long {
+        return database.getFeatureCount()
+    }
 
-        return when (existingFeatures.isNotEmpty()) {
-            true -> existingFeatures
-            /* If the DB has NOT yet been populated,
-               then get busy reading the asset files */
-            else -> {
-                /* Loop through the seven asset files to
-                   import each feature into the database */
-                assetFilenames.forEach { filename ->
-                    val fullPath = "files".plus(
-                        "/"
-                    ).plus(filename)
-                    /* Annotation reqd for readBytes.
-                       Read each file as a ByteArray */
-                    @OptIn(ExperimentalResourceApi::class)
-                    val bytes = Res.readBytes(fullPath)
-                    /* ... then decode the bytes to JSON */
-                    val jsonString = bytes.decodeToString()
-                    json.parseJsonFile(jsonString).also { collection ->
-                        database.populateTables(collection.features)
-                    }
-                }
-                val newFeatures = database.getFeatures()
-                Napier.i("SqlDelight features ${ newFeatures.size }")
-                newFeatures
-            }
-        }
+    @Throws(Exception::class)
+    fun getHighlights(): Flow<List<Highlight>> {
+        /* Database file will map SqlDelight-created
+           objects Features to our Highlight objects */
+        return database.getFeatures()
     }
 
     @Throws(Exception::class)
@@ -67,11 +47,33 @@ class DatabaseImpl(
         return database.getSetting(setting)
     }
 
+    @Throws(Exception::class)
     fun insertFavourite(featureId: Int): Long {
         return database.insertFavourite(featureId)
     }
 
+    @Throws(Exception::class)
     fun insertSetting(setting: String, value: String): Long {
         return database.insertSetting(setting, value)
+    }
+
+    @Throws(Exception::class)
+    suspend fun populateDb() {
+        assetFilenames.forEach { filename ->
+            /* Loop through the seven asset files to
+               import each feature into the database */
+            val fullPath = "files".plus(
+                "/"
+            ).plus(filename)
+            /* Annotation reqd for readBytes.
+               Read each file as a ByteArray */
+            @OptIn(ExperimentalResourceApi::class)
+            val bytes = Res.readBytes(fullPath)
+            /* ... then decode the bytes to JSON */
+            val jsonString = bytes.decodeToString()
+            json.parseJsonFile(jsonString).also { collection ->
+                database.populateTables(collection.features)
+            }
+        }
     }
 }

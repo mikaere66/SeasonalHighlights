@@ -22,6 +22,7 @@ kotlin {
             compileTaskProvider {
                 compilerOptions {
                     jvmTarget.set(JvmTarget.JVM_17)
+                    freeCompilerArgs.add("-Xexpect-actual-classes")
                     freeCompilerArgs.add("-Xjdk-release=${JavaVersion.VERSION_17}")
                 }
             }

@@ -24,9 +24,9 @@ fun AppSubtitle(
 ) {
     val horizontalPadding = 16.dp
     val subtitle: String
-    val verticalPadding = 8.dp
+    val verticalPadding = 16.dp
 
-    when (state.currentScreen) {
+    when (state.currentScreen.value) {
         Screen.Main -> {
             val current = state.currentSeason
             val substitute = when (current) {
@@ -47,7 +47,8 @@ fun AppSubtitle(
             )
         }
         Screen.Faves -> subtitle = stringResource(
-            resource = Res.string.app_faves
+            resource = Res.string.app_faves,
+            formatArgs = arrayOf(state.favourites.size)
         )
         Screen.Settings -> subtitle = stringResource(
             resource = Res.string.app_settings
@@ -57,7 +58,7 @@ fun AppSubtitle(
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {
-        val minLines = when (state.currentScreen) {
+        val minLines = when (state.currentScreen.value) {
             Screen.Settings -> 1
             else -> 2
         }
@@ -66,10 +67,10 @@ fun AppSubtitle(
             minLines = minLines,
             modifier = Modifier
                 .padding(
-                start = horizontalPadding,
-                end = horizontalPadding,
-                bottom = verticalPadding
-            ).weight(1F),
+                    start = horizontalPadding,
+                    end = horizontalPadding,
+                    bottom = verticalPadding
+                ).weight(1F),
             text = subtitle
         )
     }

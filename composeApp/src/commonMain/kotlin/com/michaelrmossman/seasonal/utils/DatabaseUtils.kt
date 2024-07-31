@@ -4,6 +4,7 @@ import com.michaelrmossman.seasonal.entities.Highlight
 
 object DatabaseUtils {
 
+    // https://stackoverflow.com/questions/56522915/how-to-get-key-for-value-from-hashmap-in-kotlin#69421077
     fun getSeasonMonths(): HashMap<Long, Long> {
         /* Give each month a season Id, from Dec.
            to November (Summer to Late Spring) */

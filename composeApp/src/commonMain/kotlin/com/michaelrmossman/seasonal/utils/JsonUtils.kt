@@ -5,7 +5,7 @@ import kotlinx.serialization.json.Json
 
 class JsonUtils {
 
-    suspend fun parseJsonFile(jsonString: String): FeatureCollection {
+    fun parseJsonFile(jsonString: String): FeatureCollection {
 
         return Json.decodeFromString<FeatureCollection>(jsonString)
     }

@@ -17,10 +17,14 @@ SELECT *
 FROM Features
 WHERE feId = ?;
 
+getFeatureCount:
+SELECT COUNT(*)
+FROM Features;
+
 getFavourites:
 SELECT *
 FROM Features
-WHERE time NOT NULL
+WHERE LENGTH(time) > 0
 ORDER BY code, name;
 
 getFeatures:

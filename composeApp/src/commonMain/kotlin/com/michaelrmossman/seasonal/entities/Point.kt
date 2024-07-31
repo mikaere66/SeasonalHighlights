@@ -5,6 +5,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Point(
+
     @SerialName("type")
     val type: String,
 

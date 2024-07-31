@@ -15,9 +15,9 @@ import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.michaelrmossman.seasonal.presentation.MainListEvent
 import com.michaelrmossman.seasonal.presentation.MainScreenState
+import com.michaelrmossman.seasonal.utils.trimmedStringResource
 import io.github.alexzhirkevich.cupertino.adaptive.AdaptiveSwitch
 import io.github.alexzhirkevich.cupertino.adaptive.ExperimentalAdaptiveApi
-import org.jetbrains.compose.resources.stringResource
 import seasonalhighlights.composeapp.generated.resources.Res
 import seasonalhighlights.composeapp.generated.resources.setting_save_restore_season
 
@@ -55,7 +55,7 @@ fun SettingsTab(
             ) {
                 Text(
                     modifier = Modifier.weight(1.0f),
-                    text = stringResource(
+                    text = trimmedStringResource(
                         Res.string.setting_save_restore_season
                     ),
                 )
