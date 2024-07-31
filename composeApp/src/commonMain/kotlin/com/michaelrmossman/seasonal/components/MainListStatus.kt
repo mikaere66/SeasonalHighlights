@@ -45,6 +45,13 @@ fun MainListStatus(
             highlight.time?.isNotEmpty() == true
         )
     }
+    val modifier = Modifier
+        .padding(all = 8.dp)
+        
+    val statusText = stringResource(
+        resource = Res.string.feature_stat,
+        formatArgs = arrayOf(highlight.stat)
+    )
     val toggleFave = {
         checked = !checked
         onEvent(
@@ -63,21 +70,18 @@ fun MainListStatus(
         AdaptiveWidget(
             cupertino = {
                 CupertinoText(
-                    style = CupertinoTheme
-                        .typography.largeTitle,
-                    text = highlight.name
+                    fontWeight = FontWeight.Bold,
+                    modifier = modifier.weight(1F),
+//                    style = CupertinoTheme
+//                        .typography.largeTitle,
+                    text = statusText
                 )
             },
             material = {
                 Text(
                     fontWeight = FontWeight.Bold,
-                    modifier = Modifier
-                        .padding(all = 8.dp)
-                        .weight(1f),
-                    text = stringResource(
-                        resource = Res.string.feature_stat,
-                        formatArgs = arrayOf(highlight.stat)
-                    )
+                    modifier = modifier.weight(1F),
+                    text = statusText
                 )
             }
         )
