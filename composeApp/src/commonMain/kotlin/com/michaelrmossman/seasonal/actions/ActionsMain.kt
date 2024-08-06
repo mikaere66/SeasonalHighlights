@@ -90,7 +90,7 @@ fun ActionsMain(
             MainMenuItem(
                 onClick = { showOverflowMenu = false },
                 onEvent = onEvent,
-                seasonDbId = season.seId.toInt(),
+                seasonDbId = season.coId.toInt(),
                 seasonIcon = vectorResource(
                     /* Remember, season ids start at one */
                     when (state.currentSeason.minus(1)) {

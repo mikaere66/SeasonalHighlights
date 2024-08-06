@@ -23,6 +23,7 @@
     <string name="tab_sett">Settings</string>
 
     <!-- Content Descriptions -->
+    <string name="desc_bottom_sheet_close">Dismiss</string>
     <string name="desc_fave_add">Add as Favourite</string>
     <string name="desc_fave_remove">Remove Favourite</string>
     <string name="desc_faves_remove">Remove all Faves</string>

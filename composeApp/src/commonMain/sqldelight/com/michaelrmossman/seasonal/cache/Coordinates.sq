@@ -1,0 +1,14 @@
+
+CREATE TABLE Coordinates(
+    dbId INTEGER NOT NULL PRIMARY KEY,
+    itId INTEGER NOT NULL,
+    posi TEXT NOT NULL
+);
+
+insertCoordinates:
+INSERT INTO Coordinates(dbId, itId, posi)
+VALUES (?,?,?);
+
+getCoordinates:
+SELECT * FROM Coordinates
+WHERE itId = ?;

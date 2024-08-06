@@ -1,6 +1,6 @@
 package com.michaelrmossman.seasonal.utils
 
-import com.michaelrmossman.seasonal.entities.Highlight
+import com.michaelrmossman.seasonal.entities.points.highlights.Highlight
 
 class SeasonFilter {
 
@@ -16,7 +16,7 @@ class SeasonFilter {
         }
 
         return highlights.filter { highlight ->
-            highlight.code == season
+            highlight.coId == season
         }
     }
 }

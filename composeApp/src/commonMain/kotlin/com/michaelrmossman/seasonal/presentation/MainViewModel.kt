@@ -28,6 +28,7 @@ class MainViewModel(
         _currentSeason,
         _state
     ) { faves, highlights, season, state ->
+        // Napier.i("HEY ${ highlights[0]. } ${ highlights[0]. }")
         val filtered = _seasonFilter.filterBySeason(
             highlights, season
         )
@@ -42,25 +43,36 @@ class MainViewModel(
 
     init {
         /* Highlights must come before Seasons */
-        loadHighlights()
-        loadSeasons()
-        loadSettings()
+        viewModelScope.launch {
+            loadHighlights()
+            // loadRoutes()
+            loadSeasons()
+            loadSettings()
+        }
     }
 
-    private fun loadHighlights() {
-        viewModelScope.launch {
+    private suspend fun loadHighlights() {
+//        viewModelScope.launch {
             /* Like everything weird that SqlDelight
                does, it returns COUNT(*) as Long */
             if (database.getFeatureCount() < 1L) {
                 /* If the DB has NOT yet been populated,
                    get busy importing the asset files */
-                database.populateDb()
+                database.loadHighlights()
             }
-        }
+//        }
+    }
+
+    private suspend fun loadRoutes() {
+//        viewModelScope.launch {
+            if (database.getRouteCount() < 1L) {
+                database.loadRoutes()
+            }
+//        }
     }
 
     private fun loadSeasons() {
-        viewModelScope.launch {
+//        viewModelScope.launch {
             try {
                 val seasons = database.getSeasons()
                 _state.update { state ->
@@ -76,11 +88,11 @@ class MainViewModel(
                     )
                 }
             }
-        }
+//        }
     }
 
     private fun loadSettings() {
-        viewModelScope.launch {
+//        viewModelScope.launch {
             try {
                 /* Restore must come before Current */
                 val saveAndRestore = database.getSetting(
@@ -103,7 +115,7 @@ class MainViewModel(
             } catch (e: Exception) {
                 _currentSeason.value = 0
             }
-        }
+//        }
     }
 
     fun onEvent(event: MainListEvent) {
@@ -129,6 +141,16 @@ class MainViewModel(
                             )
                         }
                     }
+                }
+            }
+            is MainListEvent.SetCurrentHighlight -> {
+                _state.update { state ->
+                    state.copy(
+                        currentHighlight = event.hilt,
+                        shouldShowBottomSheet = MutableStateFlow(
+                            event.hilt != null
+                        )
+                    )
                 }
             }
             is MainListEvent.SetCurrentSeason -> {

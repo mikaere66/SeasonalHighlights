@@ -1,0 +1,33 @@
+
+CREATE TABLE Routes(
+    roId INTEGER NOT NULL PRIMARY KEY,
+    ccId INTEGER,
+    area TEXT,
+    plac TEXT,
+    name TEXT,
+    stat TEXT,
+    comm TEXT,
+    desc TEXT,
+    iUrl TEXT,
+    traf TEXT,
+    time TEXT
+);
+
+getRouteCount:
+SELECT COUNT(*)
+FROM Routes;
+
+getRoutes:
+SELECT *
+FROM Routes
+ORDER BY name;
+
+insertRoute:
+INSERT INTO Routes(roId, ccId, area, plac, name, stat, desc, traf, comm, iUrl, time)
+VALUES(?,?,?,?,?,?,?,?,?,?,?);
+
+/**
+ * https://github.com/cashapp/sqldelight/issues/1482
+ */
+selectLastInsertedRowId:
+SELECT last_insert_rowid();

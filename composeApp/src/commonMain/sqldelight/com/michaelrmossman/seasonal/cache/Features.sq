@@ -2,15 +2,25 @@
 CREATE TABLE Features(
     feId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    code INTEGER NOT NULL,
+    coId INTEGER NOT NULL,
     stat TEXT NOT NULL,
     desc TEXT NOT NULL,
     iUrl TEXT,
     lati REAL NOT NULL,
     long REAL NOT NULL,
-    moId INTEGER NOT NULL,
     time TEXT
 );
+
+getFavourites:
+SELECT *
+FROM Features
+WHERE LENGTH(time) > 0
+ORDER BY coId, name;
+
+getFeatures:
+SELECT *
+FROM Features
+ORDER BY coId, name;
 
 getFeature:
 SELECT *
@@ -21,20 +31,9 @@ getFeatureCount:
 SELECT COUNT(*)
 FROM Features;
 
-getFavourites:
-SELECT *
-FROM Features
-WHERE LENGTH(time) > 0
-ORDER BY code, name;
-
-getFeatures:
-SELECT *
-FROM Features
-ORDER BY code, name;
-
 insertFeature:
-INSERT INTO Features(feId, name, code, stat, desc, iUrl, lati, long, moId, time)
-VALUES (?,?,?,?,?,?,?,?,?,?);
+INSERT INTO Features(feId, name, coId, stat, desc, iUrl, lati, long, time)
+VALUES (?,?,?,?,?,?,?,?,?);
 
 /**
  * https://github.com/cashapp/sqldelight/issues/1482

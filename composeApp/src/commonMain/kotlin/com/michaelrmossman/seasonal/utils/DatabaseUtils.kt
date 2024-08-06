@@ -1,51 +1,45 @@
 package com.michaelrmossman.seasonal.utils
 
-import com.michaelrmossman.seasonal.entities.Highlight
+import com.michaelrmossman.seasonal.entities.points.highlights.Highlight
 
 object DatabaseUtils {
 
-    // https://stackoverflow.com/questions/56522915/how-to-get-key-for-value-from-hashmap-in-kotlin#69421077
-    fun getSeasonMonths(): HashMap<Long, Long> {
+    fun getSeasonMonths(): HashMap<Long, List<Long>> {
         /* Give each month a season Id, from Dec.
            to November (Summer to Late Spring) */
         return hashMapOf(
-            12L to 1L, // Summer
-             1L to 1L,
-             2L to 2L, // Late "
-             3L to 3L, // Autumn
-             4L to 3L,
-             5L to 3L,
-             6L to 4L, // Winter
-             7L to 4L,
-             8L to 5L, // Late "
-             9L to 6L, // Spring
-            10L to 6L,
-            11L to 7L  // Late "
+            1L to listOf(12L,1L),   // Summer
+            2L to listOf(2L),       // Late "
+            3L to listOf(3L,4L,5L), // Autumn
+            4L to listOf(6L,7L),    // Winter
+            5L to listOf(8L),       // Late "
+            6L to listOf(9L,10L),   // Spring
+            7L to listOf(11L)       // Late "
         )
     }
 
     fun mapFeaturesToHighlights(
         feId: Long,
         name: String,
-        code: Long,
+        coId: Long,
         stat: String,
         desc: String,
         iUrl: String?,
         lati: Double,
         long: Double,
-        moId: Long,
+        // posi: String,
         time: String?
     ) : Highlight {
         return Highlight(
             shId = feId.toInt(),
             name = name,
-            code = code.toInt(),
+            coId = coId.toInt(),
             stat = stat,
             desc = desc,
             iUrl = iUrl,
             lati = lati,
             long = long,
-            smId = moId.toInt(),
+            // posi = posi,
             time = time
         )
     }

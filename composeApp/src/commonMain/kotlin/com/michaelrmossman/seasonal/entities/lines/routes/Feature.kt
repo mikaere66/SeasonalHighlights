@@ -1,4 +1,4 @@
-package com.michaelrmossman.seasonal.entities
+package com.michaelrmossman.seasonal.entities.lines.routes
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
@@ -9,8 +9,8 @@ data class Feature(
     @SerialName("type")
     val type: String,
 
-    @SerialName("geometry")
-    val geometry: Point,
+    @Serializable(with = GeometrySerializer::class)
+    val geometry: List<Coordinates>,
 
     @SerialName("properties")
     val properties: Properties

@@ -1,0 +1,9 @@
+
+CREATE TABLE Months(
+    moId INTEGER NOT NULL PRIMARY KEY,
+    coId INTEGER NOT NULL
+);
+
+insertMonth:
+INSERT INTO Months(moId, coId)
+VALUES (?,?);

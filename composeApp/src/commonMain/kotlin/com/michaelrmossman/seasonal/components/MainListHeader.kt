@@ -9,7 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.michaelrmossman.seasonal.entities.Highlight
+import com.michaelrmossman.seasonal.entities.points.highlights.Highlight
 import com.michaelrmossman.seasonal.utils.Constants.seasonColors
 import io.github.alexzhirkevich.cupertino.CupertinoText
 import io.github.alexzhirkevich.cupertino.adaptive.AdaptiveWidget
@@ -26,7 +26,7 @@ fun MainListHeader(
             /* Find colour for this season by
                subtracting 1 from seasonId */
             .background(
-                seasonColors[highlight.code.minus(1)]
+                seasonColors[highlight.coId.minus(1)]
             )
             .fillMaxWidth()
             .padding(all = 8.dp)

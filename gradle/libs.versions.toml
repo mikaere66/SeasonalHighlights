@@ -40,6 +40,12 @@ navigationRuntimeKtx = "2.7.7"
 #sqlite = "2.5.0-SNAPSHOT"
 sqlDelight = "2.0.2"
 
+accompanist = "0.29.2-rc"
+gmsLocation = "21.1.0"
+gmsMaps = "18.2.0"
+mapsCompose = "2.11.2"
+secretsGradle = "2.0.1"
+
 [libraries]
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidxActivityCompose" }
 #androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
@@ -82,6 +88,11 @@ sqldelight-coroutines-ext = { group = "app.cash.sqldelight", name = "coroutines-
 sqldelight-driver-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
 sqldelight-driver-native = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
 
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
+play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "gmsLocation" }
+play-services-maps = { module = "com.google.android.gms:play-services-maps", version.ref = "gmsMaps" }
+maps-compose = { module = "com.google.maps.android:maps-compose", version.ref = "mapsCompose" }
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 #androidLibrary = { id = "com.android.library", version.ref = "agp" }
@@ -94,3 +105,5 @@ kotlinxSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 #ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 #room = { id = "androidx.room", version.ref = "roomMultiplatform" }
 sqlDelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
+
+secretsGradle = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "secretsGradle" }

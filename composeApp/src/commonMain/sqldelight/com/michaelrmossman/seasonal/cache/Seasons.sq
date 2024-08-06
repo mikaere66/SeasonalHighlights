@@ -1,9 +1,6 @@
 
-/**
- * 
- */
 CREATE TABLE Seasons(
-    seId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    coId INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     code TEXT NOT NULL
 );
 
@@ -15,7 +12,7 @@ getSeasons:
 SELECT * FROM Seasons;
 
 insertSeason:
-INSERT INTO Seasons(seId, code)
+INSERT INTO Seasons(coId, code)
 VALUES (?,?);
 
 /**

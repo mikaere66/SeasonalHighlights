@@ -28,6 +28,8 @@ import seasonalhighlights.composeapp.generated.resources.fave_added
    LazyColumn key and the "Fave added" timeStamp */
 @Composable
 fun FaveListTab(
+//    cuperOnClick: () -> Unit,
+//    droidOnClick: () -> Unit,
     horizontalPadding: Dp,
     modifier: Modifier,
     onEvent: (MainListEvent) -> Unit,

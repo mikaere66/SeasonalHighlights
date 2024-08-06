@@ -1,4 +1,4 @@
-package com.michaelrmossman.seasonal.entities
+package com.michaelrmossman.seasonal.entities.points.highlights
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

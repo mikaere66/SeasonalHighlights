@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,7 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.michaelrmossman.seasonal.entities.Highlight
+import com.michaelrmossman.seasonal.entities.points.highlights.Highlight
 import com.michaelrmossman.seasonal.presentation.MainListEvent
 import io.github.alexzhirkevich.cupertino.CupertinoText
 import io.github.alexzhirkevich.cupertino.adaptive.AdaptiveIconButton
@@ -27,7 +26,6 @@ import io.github.alexzhirkevich.cupertino.adaptive.ExperimentalAdaptiveApi
 import io.github.alexzhirkevich.cupertino.adaptive.icons.AdaptiveIcons
 import io.github.alexzhirkevich.cupertino.adaptive.icons.Favorite
 import io.github.alexzhirkevich.cupertino.adaptive.icons.FavoriteBorder
-import io.github.alexzhirkevich.cupertino.theme.CupertinoTheme
 import org.jetbrains.compose.resources.stringResource
 import seasonalhighlights.composeapp.generated.resources.Res
 import seasonalhighlights.composeapp.generated.resources.desc_fave_add
@@ -45,9 +43,7 @@ fun MainListStatus(
             highlight.time?.isNotEmpty() == true
         )
     }
-    val modifier = Modifier
-        .padding(all = 8.dp)
-        
+    val modifier = Modifier.padding(all = 8.dp)
     val statusText = stringResource(
         resource = Res.string.feature_stat,
         formatArgs = arrayOf(highlight.stat)
@@ -63,8 +59,7 @@ fun MainListStatus(
     }
 
     Row(
-        modifier = Modifier
-            .fillMaxWidth(),
+        modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.Top
     ) {
         AdaptiveWidget(
@@ -72,8 +67,6 @@ fun MainListStatus(
                 CupertinoText(
                     fontWeight = FontWeight.Bold,
                     modifier = modifier.weight(1F),
-//                    style = CupertinoTheme
-//                        .typography.largeTitle,
                     text = statusText
                 )
             },

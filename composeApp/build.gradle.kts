@@ -10,6 +10,8 @@ plugins {
     // alias(libs.plugins.ksp)
     // alias(libs.plugins.room)
     alias(libs.plugins.sqlDelight) version libs.versions.sqlDelight.get()
+
+    alias(libs.plugins.secretsGradle) version libs.versions.secretsGradle.get()
 }
 
 kotlin {
@@ -54,6 +56,11 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
             implementation(libs.sqldelight.driver.android)
+
+            implementation(libs.accompanist.permissions)
+            implementation(libs.play.services.location)
+            implementation(libs.play.services.maps)
+            implementation(libs.maps.compose)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
